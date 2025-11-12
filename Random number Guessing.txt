@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    // Seed the random number generator with current time
+    srand(time(NULL));
+
+    // Generate a random number between 1 and 100
+    int random_num = (rand() % 100) + 1;
+
+    int input_num,i=1;
+    while(1==1)
+    {   //Input is taken
+        printf("%d) Guess a no. between 1 - 100 : ",i);
+        scanf("%d",&input_num);
+        
+        //Condition Logic framework
+        if(input_num == random_num)
+        {
+            printf("Your guess is right , its %d",random_num);
+            break;
+                    }
+        else if(input_num < random_num)
+        {
+            printf("Guess higher, agian\n");
+        }
+        else if(input_num > random_num)
+        {
+            printf("Guess lower , again\n");
+        }
+        i++;    
+    }
+    //Only after right guess and breaking the loop , will this message be displayed
+    printf("\n\n!!! It took %d tries for u to guess it !!!",i);
+    
+    return 0;
+}
